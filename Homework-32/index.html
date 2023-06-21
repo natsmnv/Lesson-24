@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let elem;
+        function add() {
+            elem = document.getElementById('link').value;
+            const http = 'http://';
+            const https = 'https://';
+            document.getElementById('form').reset();
+            if (!elem.startsWith(http) && !elem.startsWith(https)) {
+                elem = [https, elem].join('');
+            }
+        }
+        
+        function goTo() {
+            window.location = (elem);
+        }
+    </script>
+</head>
+<body>
+    <!-- На сторінці є дві кнопки. - переадресовується на інший сайт (за раніше введеним посиланням). 
+    Реалізувати перевірку на http/https. Якщо протокол не вказаний - додаємо -->
+        <form id="form">
+            <input type="text" id="link" placeholder="Your link">
+        </form>
+        <br>
+    <button class="add" onclick="add()">Add link</button>
+    <button class="go" onclick="goTo()">Go by link</button>
+</body>
+</html>
