@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapEmoji {
+    padding: 10px;
+}
+
+.counter {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.emoji {
+    font-size: 30px;
+    cursor: pointer;
+}
