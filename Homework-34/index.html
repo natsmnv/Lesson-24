@@ -95,7 +95,7 @@
                                 Покоління Intel Core <b>11-е покоління</b><br />
                                 Архітектура процесора <b>Tiger Lake</b>
                             </p>
-                            <button id="info__laptop--ACER--buy">Buy</button>
+                            <button id="info__laptop--ACER--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__laptops--laptop info__laptop">
                             <p id="info__laptop--Asus">
@@ -108,7 +108,7 @@
                                 Покоління Intel Core <b>10-е покоління</b><br />
                                 Архітектура процесора <b>Comet Lake</b>
                             </p>
-                            <button id="info__laptop--Asus--buy">Buy</button>
+                            <button id="info__laptop--Asus--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__laptops--laptop info__laptop">
                             <p id="info__laptop--Lenovo">
@@ -121,7 +121,7 @@
                                 Покоління Intel Core <b>11-е покоління</b><br />
                                 Архітектура процесора <b>Tiger Lake</b>
                             </p>
-                            <button id="info__laptop--Lenovo--buy">Buy</button>
+                            <button id="info__laptop--Lenovo--buy" class="buy">Buy</button>
                         </div>
                     </div>
                     <div class="info__phones">
@@ -129,19 +129,19 @@
                             <p id="info__phone--Tecno">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>4 x 2.3 + 4 x 1.8 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G37</b></p>
-                                <button id="info__phone--Tecno--buy">Buy</button>
+                                <button id="info__phone--Tecno--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__phones--phone info__phone">
                             <p id="info__phone--Xiaomi">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>2 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G25</b></p>
-                                <button id="info__phone--Xiaomi--buy">Buy</button>
+                                <button id="info__phone--Xiaomi--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__phones--phone info__phone">
                             <p id="info__phone--Oppo">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>2.3 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G35</b></p>
-                                <button id="info__phone--Oppo--buy">Buy</button>
+                                <button id="info__phone--Oppo--buy" class="buy">Buy</button>
                         </div>
                     </div>
                     <div class="info__headphones">
@@ -154,7 +154,7 @@
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b> <br> <b>Windows</b> <br> <b>macOS</b> <br>
                                 <b>iPadOS</b></p>
-                                <button id="info__headphones--Philips--buy">Buy</button>
+                                <button id="info__headphones--Philips--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__headphones--headphone info__headphone">
                             <p id="info__headphones--Oppo">Тип пристрою <b>навушники</b> <br>
@@ -164,7 +164,7 @@
                                 Кріплення <b>у вухах/раковині</b> <br>
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b></p>
-                                <button id="info__headphones--Oppo--buy">Buy</button>
+                                <button id="info__headphones--Oppo--buy" class="buy">Buy</button>
                         </div>
                         <div class="info__headphones--headphone info__headphone">
                             <p id="info__headphones--Redmi">Тип пристрою <b>навушники</b> <br>
@@ -175,7 +175,7 @@
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b> <br> <b>Windows</b> <br> <b>macOS</b> <br>
                                 <b>iPadOS</b></p>
-                                <button id="info__headphones--Redmi--buy">Buy</button>
+                                <button id="info__headphones--Redmi--buy" class="buy">Buy</button>
                         </div>
                     </div>
                 </div>
@@ -208,10 +208,6 @@
             })
         }
 
-        function hideAll() {
-            
-        }
-        
         function showItems(category) {
             hide(laptops);
             hide(phones);
@@ -239,7 +235,7 @@
                         check.style.display = 'none';
                     }
 
-                    itemInfo[index].style.display = 'block';
+                    itemInfo[index].style.display = 'flex';
                     check = itemInfo[index];
                 })
             })
