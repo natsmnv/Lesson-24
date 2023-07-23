@@ -55,7 +55,7 @@ img {
     margin-top: 50px;
 }
 
-.info__laptop, .info__phone, .info__headphone {
+.info__laptop, .info__phone, .info__headphone, .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,4 +67,13 @@ img {
     padding: 5px 25px;
     font-size: 15px;
     margin-top: 20px;
+}
+
+#form {
+    display: none;
+}
+
+#error {
+    display: none;
+    color: red;
 }

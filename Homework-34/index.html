@@ -10,21 +10,28 @@
 
 <body>
     
-    <!-- Дано 3 блоки
-    В лівій частині сторінки - перелік категорій.
-    При натисканні на категорію в середній блок виводиться список товарів цієї категорії.
-    Клік на товар - інформацію про товар у правому блоці.
-    В інформації товару - кнопка “купити”.
-    При натисканні на “купити” з'являється повідомлення, що товар куплений і повернення у вихідний стан програми ( коли відображається лише список категорій). -->
+    <!-- Робимо на підставі минулого дз.
+
+    В інформації товару - кнопка "купити".
+    При натисканні на "купити" нижче з'являється форма оформлення замовлення з наступними полями:
+    ПІБ покупця
+    Місто (вибір зі списку)
+    Склад Нової пошти для надсилання
+    Післяплати або оплати банківської картки
+    Кількість продукції, що купується
+    Коментар до замовлення
+    2. Реалізувати перевірку всіх даних користувача під час підтвердження замовлення - обов'язкові поля заповнені. Інакше - виводити помилку на сторінку
+
+    3. Виводити інформацію про замовлення на сторінку (інформація про товар та про доставку) -->
 
     <section class="shop-section">
         <div class="container">
             <div class="shop__block">
                 <div class="shop__block--categories categories">
-                    <h3>Categories</h3>
-                    <p id="categoryLaptops">Laptops</p>
-                    <p id="categoryPhones">Phones</p>
-                    <p id="categoryHeadphones">Headphones</p>
+                    <h3>Категорії</h3>
+                    <p id="categoryLaptops">Ноутбуки</p>
+                    <p id="categoryPhones">Телефони</p>
+                    <p id="categoryHeadphones">Навушники</p>
                 </div>
                 <div class="shop__block--items items">
                     <div class="items__laptops">
@@ -103,7 +110,7 @@
                                 Покоління Intel Core <b>11-е покоління</b><br />
                                 Архітектура процесора <b>Tiger Lake</b>
                             </p>
-                            <button id="info__laptop--ACER--buy" class="buy">Buy</button>
+                            <button id="info__laptop--ACER--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__laptops--laptop info__laptop">
                             <p id="info__laptop--Asus">
@@ -116,7 +123,7 @@
                                 Покоління Intel Core <b>10-е покоління</b><br />
                                 Архітектура процесора <b>Comet Lake</b>
                             </p>
-                            <button id="info__laptop--Asus--buy" class="buy">Buy</button>
+                            <button id="info__laptop--Asus--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__laptops--laptop info__laptop">
                             <p id="info__laptop--Lenovo">
@@ -129,7 +136,7 @@
                                 Покоління Intel Core <b>11-е покоління</b><br />
                                 Архітектура процесора <b>Tiger Lake</b>
                             </p>
-                            <button id="info__laptop--Lenovo--buy" class="buy">Buy</button>
+                            <button id="info__laptop--Lenovo--buy" class="buy">Придбати</button>
                         </div>
                     </div>
                     <div class="info__phones">
@@ -137,19 +144,19 @@
                             <p id="info__phone--Tecno">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>4 x 2.3 + 4 x 1.8 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G37</b></p>
-                                <button id="info__phone--Tecno--buy" class="buy">Buy</button>
+                                <button id="info__phone--Tecno--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__phones--phone info__phone">
                             <p id="info__phone--Xiaomi">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>2 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G25</b></p>
-                                <button id="info__phone--Xiaomi--buy" class="buy">Buy</button>
+                                <button id="info__phone--Xiaomi--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__phones--phone info__phone">
                             <p id="info__phone--Oppo">Кількість ядер процесора <b>8</b><br>
                                 Частота процесора <b>2.3 ГГц</b><br>
                                 Процесор <b>MediaTek Helio G35</b></p>
-                                <button id="info__phone--Oppo--buy" class="buy">Buy</button>
+                                <button id="info__phone--Oppo--buy" class="buy">Придбати</button>
                         </div>
                     </div>
                     <div class="info__headphones">
@@ -162,7 +169,7 @@
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b> <br> <b>Windows</b> <br> <b>macOS</b> <br>
                                 <b>iPadOS</b></p>
-                                <button id="info__headphones--Philips--buy" class="buy">Buy</button>
+                                <button id="info__headphones--Philips--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__headphones--headphone info__headphone">
                             <p id="info__headphones--Oppo">Тип пристрою <b>навушники</b> <br>
@@ -172,7 +179,7 @@
                                 Кріплення <b>у вухах/раковині</b> <br>
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b></p>
-                                <button id="info__headphones--Oppo--buy" class="buy">Buy</button>
+                                <button id="info__headphones--Oppo--buy" class="buy">Придбати</button>
                         </div>
                         <div class="info__headphones--headphone info__headphone">
                             <p id="info__headphones--Redmi">Тип пристрою <b>навушники</b> <br>
@@ -183,126 +190,64 @@
                                 Призначення <b>прослуховування музики для смартфону (телефону)</b> <br>
                                 Сумісність <b>Android</b> <br> <b>iOS</b> <br> <b>Windows</b> <br> <b>macOS</b> <br>
                                 <b>iPadOS</b></p>
-                                <button id="info__headphones--Redmi--buy" class="buy">Buy</button>
+                                <button id="info__headphones--Redmi--buy" class="buy">Придбати</button>
                         </div>
                     </div>
+                    <form id="form" onsubmit="return validateForm()">
+                        <label for="firstName">Ім'я: </label>
+                        <input type="text" name="firstName" id="firstName" required>
+                        <br>
+                        <br>
+                        <label for="secondName">Призвище: </label>
+                        <input type="text" name="secondName" id="secondName" required>
+                        <br>
+                        <br>
+                        <label for="patronymic">По батькові: </label>
+                        <input type="text" name="patronymic" id="patronymic">
+                        <br>
+                        <br>
+                
+                        <label for="city">Місто: </label>
+                        <select name="city" id="city" required>
+                            <option value="Київ">Київ</option>
+                            <option value="Одеса">Одеса</option>
+                            <option value="Днепр">Днепр</option>
+                            <option value="Вінниця">Вінниця</option>
+                            <option value="Львів">Львів</option>
+                        </select>
+                        <br>
+                        <br>
+                
+                        <label for="newPost">Нова Пошта: </label>
+                        <input type="text" name="newPost" id="newPost" required>
+                        <br>
+                        <span id="error">Неправільні данні</span>
+                        <br>
+                
+                        <label for="payment">Оплата: </label>
+                        <input type="radio" name="payment" id="payment" value="byCard" checked>Карткою
+                        <input type="radio" name="payment" id="payment" value="postpaid">Післяплата
+                        <br>
+                        <br>
+                
+                        <label for="quantity">Кількість: </label>
+                        <input type="number" id="quantity" min="1" max="10" step="1" value="1">
+                        <br>
+                        <br>
+                
+                        <label for="comment">Напишить свій коментар: </label>
+                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <br>
+                        <br>
+                
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        let categoryLaptops = document.getElementById('categoryLaptops');
-        let categoryPhones = document.getElementById('categoryPhones');
-        let categoryHeadphones = document.getElementById('categoryHeadphones');
-
-        let categories = document.querySelectorAll('.categories p');
-
-        let laptops = document.querySelectorAll('.items__laptops--laptop');
-        let phones = document.querySelectorAll('.items__phones--phone');
-        let headphones = document.querySelectorAll('.items__headphones--headphone');
-
-        let infoLaptops = document.querySelectorAll('.info__laptops--laptop');
-        let infoPhones = document.querySelectorAll('.info__phone');
-        let infoHeadphones = document.querySelectorAll('.info__headphone');
-
-        let btn = document.querySelectorAll('button');
-
-        let check = '';
-
-        function hide(element) {
-            element.forEach(function(element) {
-                element.style.display = 'none';
-            })
-        }
-
-        function showItems(category) {
-            hide(laptops);
-            hide(phones);
-            hide(headphones);
-            
-            if(category === 'categoryLaptops') {
-                laptops.forEach(function(element) {
-                    element.style.display = 'grid';
-                })
-            } else if (category === 'categoryPhones') {
-                phones.forEach(function(element) {
-                    element.style.display = 'grid';
-                })
-            } else if (category === 'categoryHeadphones') {
-                headphones.forEach(function(element) {
-                    element.style.display = 'grid';
-                })
-            }
-        }
-
-        function showInfo(item, itemInfo) {
-            item.forEach(function(element, index) {
-                element.addEventListener('click', function() {
-                    if(check !== '') {
-                        check.style.display = 'none';
-                    }
-
-                    itemInfo[index].style.display = 'flex';
-                    check = itemInfo[index];
-                })
-            })
-        }
-
-
-        function buy() {
-            let info = 'info__';
-            let buy = '--buy';
-            let button;
-            let id;
-            let item;
-            btn.forEach(function(element) {
-                element.addEventListener('click', function() {
-                    button = element.id;
-                    id = button.replace(info, '').replace(buy, '');
-                    item = document.getElementById(id);
-                    alert(`Вітаємо! Ви придбали ${item.innerText}!`);
-
-                    hide(laptops);
-                    hide(phones);
-                    hide(headphones);
-
-                    hide(infoLaptops);
-                    hide(infoPhones);
-                    hide(infoHeadphones);
-                })
-            });
-        };
-
-        
-        hide(laptops);
-        hide(phones);
-        hide(headphones);
-
-        hide(infoLaptops);
-        hide(infoPhones);
-        hide(infoHeadphones);
-        
-        categories.forEach(function(element) {
-            element.addEventListener('click', function(event) {
-                let target = event.target.id;
-
-                if(target === 'categoryLaptops') {
-                    showItems('categoryLaptops');
-                } else if (target === 'categoryPhones') {
-                    showItems('categoryPhones');
-                } else if (target === 'categoryHeadphones') {
-                    showItems('categoryHeadphones');
-                }
-            })
-        });
-
-        showInfo(laptops, infoLaptops);
-        showInfo(phones, infoPhones);
-        showInfo(headphones, infoHeadphones);
-
-        buy();
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
