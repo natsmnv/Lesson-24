@@ -10,28 +10,24 @@
 
 <body>
     
-    <!-- Робимо на підставі минулого дз.
-
-    В інформації товару - кнопка "купити".
-    При натисканні на "купити" нижче з'являється форма оформлення замовлення з наступними полями:
-    ПІБ покупця
-    Місто (вибір зі списку)
-    Склад Нової пошти для надсилання
-    Післяплати або оплати банківської картки
-    Кількість продукції, що купується
-    Коментар до замовлення
-    2. Реалізувати перевірку всіх даних користувача під час підтвердження замовлення - обов'язкові поля заповнені. Інакше - виводити помилку на сторінку
-
-    3. Виводити інформацію про замовлення на сторінку (інформація про товар та про доставку) -->
+    <!-- Модифікувати інтернет-магазин таким чином, щоб була можливість переглянути всі збережені замовлення 
+        навіть після оновлення сторінки (використовувати localStorage).
+        На сторінці спочатку крім списку категорій відображається також кнопка “мої замовлення”.
+        При кліку на “мої замовлення” - пропадають категорії та відображається список усіх замовлень користувача 
+        (дата та ціна) - при кліку на замовлення - “розгортаються” деталі замовлення.
+        Реалізувати можливість видалення замовлення зі списку. -->
 
     <section class="shop-section">
         <div class="container">
             <div class="shop__block">
                 <div class="shop__block--categories categories">
-                    <h3>Категорії</h3>
+                    <input type="submit" name="myPurchases" id="myPurchases" value="Мої замовлення" onclick="showPurchases()">
+                    <input type="submit" name="return" id="return" value="Повернутись">
+                    <h3 id="categoryTitle">Категорії</h3>
                     <p id="categoryLaptops">Ноутбуки</p>
                     <p id="categoryPhones">Телефони</p>
                     <p id="categoryHeadphones">Навушники</p>
+                    <div id="listMyPurchases"></div>
                 </div>
                 <div class="shop__block--items items">
                     <div class="items__laptops">
@@ -40,6 +36,7 @@
                                 <img src="./images/Laptop Acer.jpg" alt="Laptop Acer">
                             </div>
                             <p class="laptop--title">Ноутбук ACER Nitro 5 AN515-57-54VT Shale Black (NH.QEKEU.008)</p>
+                            <br><span id="price">35999 грн.</span>
                         </div>
                         <div class="items__laptops--laptop laptop laptop--Asus" id="laptop--Asus">
                             <div class="laptop--img">
@@ -47,6 +44,7 @@
                             </div>
                             <p class="items__laptops--title">Ноутбук ASUS TUF Gaming F15 FX506LHB-HN333 Bonfire
                                 Black(90NR03U2-M00C80)</p>
+                            <br><span id="price">29999 грн.</span>
                         </div>
                         <div class="items__laptops--laptop laptop laptop--Lenovo" id="laptop--Lenovo">
                             <div class="laptop--img">
@@ -54,6 +52,7 @@
                             </div>
                             <p class="items__laptops--title">Ноутбук LENOVO IdeaPad Gaming 3 15IHU6 Shadow Black
                                 (82K101GYRA)</p>
+                            <br><span id="price">29999 грн.</span>
                         </div>
                     </div>
                     <div class="items__phones">
@@ -62,18 +61,21 @@
                                 <img src="./images/Phone Tecno.jpg" alt="Phone Tecno">
                             </div>
                             <p class="items__phones--title">Смартфон TECNO Spark 10 (KI5q) 8/128Gb NFC Meta Black</p>
+                            <br><span id="price">6999 грн.</span>
                         </div>
                         <div class="items__phones--phone phone" id="phone--Xiaomi">
                             <div class="phone--img">
                                 <img src="./images/Phone Xiaomi.jpg" alt="Phone Xiaomi">
                             </div>
                             <p class="items__phones--title">Смартфон XIAOMI Redmi 9A 2/32GB Granite Gray</p>
+                            <br><span id="price">4499 грн.</span>
                         </div>
                         <div class="items__phones--phone phone" id="phone--Oppo">
                             <div class="phone--img">
                                 <img src="./images/Phone Oppo.jpg" alt="Phone Oppo">
                             </div>
                             <p class="items__phones--title">Смартфон OPPO A16 3/32GB Pearl Blue</p>
+                            <br><span id="price">5399 грн.</span>
                         </div>
                     </div>
                     <div class="items__headphones">
@@ -82,18 +84,21 @@
                                 <img src="./images/Headphones Philips.jpg" alt="Headphones Philips">
                             </div>
                             <p class="headphone--title">Наушники PHILIPS TAT2206 True Wireless Black (TAT2206BK/00)</p>
+                            <br><span id="price">1599 грн.</span>
                         </div>
                         <div class="items__headphones--headphone headphone" id="headphones--Oppo">
                             <div class="headphone--img">
                                 <img src="./images/Headphones Oppo.jpg" alt="Headphones Oppo">
                             </div>
                             <p class="items__headphone--title">Наушники OPPO Enco X2 Black (ETE01 BLACK)</p>
+                            <br><span id="price">5999 грн.</span>
                         </div>
                         <div class="items__headphones--headphone headphone" id="headphones--Redmi">
                             <div class="headphone--img">
                                 <img src="./images/Headphones Redmi.jpg" alt="Headphones Redmi">
                             </div>
                             <p class="items__headphone--title">Наушники Redmi Buds 3 Lite Black (BHR5489GL)</p>
+                            <br><span id="price">2140 грн.</span>
                         </div>
                     </div>
                 </div>
@@ -193,7 +198,7 @@
                                 <button id="info__headphones--Redmi--buy" class="buy">Придбати</button>
                         </div>
                     </div>
-                    <form id="form" onsubmit="return validateForm()">
+                    <form id="form" onsubmit="return validateForm(event)">
                         <label for="firstName">Ім'я: </label>
                         <input type="text" name="firstName" id="firstName" required>
                         <br>
@@ -240,7 +245,7 @@
                         <br>
                         <br>
                 
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Придбати">
                     </form>
                 </div>
             </div>

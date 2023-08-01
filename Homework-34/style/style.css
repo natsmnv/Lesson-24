@@ -44,6 +44,7 @@ img {
     cursor: pointer;
     margin-top: 20px;
     row-gap: 30px;
+    max-width: 130px;
 }
 
 .categories p {
@@ -76,4 +77,27 @@ img {
 #error {
     display: none;
     color: red;
+}
+
+#price {
+    font-weight: bold;
+    text-align: center;
+}
+
+#myPurchases {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+/* #listMyPurchases {
+    display: none;
+} */
+
+#return {
+    display: none;
+    padding: 5px 5px;
+    font-size: 15px;
+    margin-top: 20px;
 }
